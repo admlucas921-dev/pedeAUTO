@@ -14,7 +14,7 @@ Os aplicativos são compilados e hospedados separadamente. Ambos usam o mesmo pr
 
 1. Crie um projeto Supabase e execute `supabase/migrations/202609230001_initial.sql` no SQL Editor de um banco **novo**. Revise a migração antes de aplicá-la a um banco existente.
 2. Copie `apps/menu/.env.example` para `apps/menu/.env.local` e `apps/manager/.env.example` para `apps/manager/.env.local`. Preencha a URL do projeto (`https://<ref>.supabase.co`) e sua chave pública (publishable/anon) em ambos. Em `VITE_MENU_URL`, informe a URL do cardápio publicado.
-3. Em Supabase Auth > URL Configuration, cadastre a URL do painel em `Site URL` e em `Redirect URLs`; habilite autenticação por e-mail. A recuperação de senha usa esse redirecionamento. A redefinição efetiva da senha precisa de uma tela complementar, ainda pendente.
+3. Em Supabase Auth > URL Configuration, cadastre a URL do painel em `Site URL` e em `Redirect URLs`; habilite autenticação por e-mail. A recuperação de senha usa esse redirecionamento e mostra o formulário de nova senha ao abrir o link recebido.
 4. Execute `npm install`, `npm run dev:manager` e `npm run dev:menu` em terminais separados. Execute `npm run build` para conferir os dois aplicativos.
 5. Publique cada pasta em um servidor distinto com suas próprias variáveis de ambiente. Configure fallback de rotas SPA para `index.html` no servidor do menu para permitir o acesso por slug.
 
